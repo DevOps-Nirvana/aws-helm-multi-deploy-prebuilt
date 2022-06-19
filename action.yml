@@ -29,7 +29,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: docker://devopsnirvana/aws-helm-multi-deploy
+  image: docker://devopsnirvana/aws-helm-multi-deploy:v1
   env:
     CLUSTER_NAME: ${{ inputs.cluster-name }}
     AWS_REGION: ${{ inputs.aws-region }}
