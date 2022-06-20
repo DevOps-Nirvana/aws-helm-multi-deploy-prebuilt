@@ -1,6 +1,10 @@
 # Kubernetes Helm Multi-Deploy (Pre-Built Docker Image)
 
-> :warning: **This action's docker image is pulled from DockerHub.** If you don't trust us and want to build the image at runtime [see here](https://github.com/DevOps-Nirvana/aws-helm-multi-deploy).
+> :warning: **This action's docker image is pulled from DockerHub.**
+>
+> For a built-at-runtime docker-based action with all dependencies included [see here](https://github.com/DevOps-Nirvana/aws-helm-multi-deploy)
+>
+> For a no-docker action which requies all dependencies be installed in the GitHub Docker [see here](https://github.com/DevOps-Nirvana/aws-helm-multi-deploy-nodocker)
 
 This GitHub Action will deploy all Helm chart folders inside a 'deployment' folder in your repository root. Useful for deploying multiple services that are in separate charts. For example:
 
@@ -54,7 +58,7 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v2
-      - uses: DevOps-Nirvana/k8s-helm-multi-deploy@v1
+      - uses: DevOps-Nirvana/k8s-helm-multi-deploy-prebuilt@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
